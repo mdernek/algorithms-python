@@ -1,14 +1,16 @@
-#How to Find all Pairs in Array of Integers Whose sum is Equal to a Given Number
-#https://javarevisited.blogspot.com/2014/08/how-to-find-all-pairs-in-array-of-integers-whose-sum-equal-given-number-java.html?source=post_page---------------------------
+# How to Find all Pairs in Array of Integers
+# Whose sum is Equal to a Given Number
+# https://javarevisited.blogspot.com/2014/08/how-to-find-all-pairs-in-array-of-integers-whose-sum-equal-given-number-java.html?source=post_page---------------------------
+
 
 class FindAllPairsInArray:
-    
+
     def sum_using_set(self, arr, k):
         s = set()
         n = len(arr)
         result = []
 
-        if n<2:
+        if n < 2:
             return result
 
         for i in range(n):
@@ -25,22 +27,21 @@ class FindAllPairsInArray:
         n = len(arr)
         result = []
 
-        if n<2:
+        if n < 2:
             return result
-        
-        l = 0
-        r = n
+
+        left = 0
+        right = n
 
         arr = sorted(arr)
 
-        while l<r:
-            total = arr[l]+arr[r]
+        while left < right:
+            total = arr[left]+arr[right]
             if total == k:
-                result.append((l, r))
+                result.append((left, right))
             elif total < k:
-                l += 1
+                left += 1
             else:
-                r -= 1
+                right -= 1
 
         return result
-
