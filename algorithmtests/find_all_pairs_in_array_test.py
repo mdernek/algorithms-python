@@ -1,4 +1,4 @@
-from arraysamples import find_all_pairs_in_array as pairs
+from algorithms.arraysamples import find_all_pairs_in_array as pairs
 import unittest
 
 
